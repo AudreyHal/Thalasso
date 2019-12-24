@@ -1,0 +1,34 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3774765, 2019-06-18T01:02:36-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: TTNormsPro-Bold by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-norms/bold/
+ * 
+ * Webfont: TTNormsPro-Regular by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-norms/regular/
+ * 
+ * 
+ * License: https://www.myfonts.com/viewlicense?type=web&buildid=3774765
+ * Licensed pageviews: 200,000
+ * Webfonts copyright: Copyright (c) 2016-2019 by TypeType. Designers Ivan Gladkikh, Pavel Emelyanov. Technical designers Vika Usmanova, Olexa Volochay, Nadyr Rakhimov. All rights reserved.
+ * 
+ * © 2019 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/39992d");
+
+  
+@font-face {font-family: 'TTNormsPro-Bold';src: url('fonts/39992D_0_0.eot');src: url('fonts/39992D_0_0.eot?#iefix') format('embedded-opentype'),url('fonts/39992D_0_0.woff') format('woff2'),url('fonts/39992D_0_0.woff') format('woff'),url('fonts/39992D_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'TTNormsPro-Regular';src: url('fonts/39992D_1_0.eot');src: url('fonts/39992D_1_0.eot?#iefix') format('embedded-opentype'),url('fonts/39992D_1_0.woff') format('woff2'),url('fonts/39992D_1_0.woff') format('woff'),url('fonts/39992D_1_0.ttf') format('truetype');}
+ 

@@ -1,0 +1,71 @@
+body{
+  margin: 0px;
+}
+
+.intro{
+  background-image: url("../images/firstview_picture.sp.jpg");
+  background-size: cover;  
+  background-position: 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 120px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.section_one{
+  height: 100vh;
+  position: relative; 
+}
+
+.about-text{
+  transform: none; 
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.grid-container{
+  position: relative;
+  padding: 53px 34px 0px;
+}
+
+.introduction{
+  padding-top: 30px; 
+}
+
+.introduction-title{
+  font-weight: 400;
+  font-size: 32px;
+}
+
+.introduction__description{
+  font-size: 14px;
+  margin-top: 26px;
+}
+
+.about_picture{
+  
+}
+
+@media (min-width:1024px){
+  .intro{
+    background-image: url("../images/firstview_picture.jpg");
+  }
+
+  .about-text{
+    transform: rotate(90deg) translateY(-100%);
+    position: absolute;
+    top: 50px;
+    left: 120px;
+  }
+
+  .grid-container{    
+    padding: 135px 0px 0px;
+  }
+
+  .introduction{
+    padding-top: 0px; 
+  }
+  
+}
