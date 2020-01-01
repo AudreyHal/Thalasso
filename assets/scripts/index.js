@@ -31,6 +31,36 @@ window.addEventListener('scroll', updateScrollY)
 
 
 document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(()=>{
+    $('.loading').addClass("fade-loader");
+  }, 800);
+  
+  setTimeout(()=>{    
+    $('.intro').css({
+      "opacity":"1",
+      // "transform": "translateY(-15px)"
+    })
+          
+      $('.intro').ripples({
+        resolution: 96,
+        dropRadius: 80, 
+        perturbance: 0.06,
+      });
+     
+    // Automatic drops
+		var $el = $('.intro');
+		var x = Math.random() * $el.innerWidth();
+		var y = Math.random() * $el.innerHeight();
+		var dropRadius = 80;
+		var strength =  .02 + .1 * Math.random()  ;
+
+		$el.ripples('drop', x, y, dropRadius, strength);
+    setTimeout(()=>{ $el.ripples('destroy')  },5000)
+
+    gsap.to("h2.title", {duration: 1, opacity: 0.3});
+  }, 1200);
+  
+
   // Set the height of parent as absolutely positioned child
   setContentHeight = () => {
     let parentDiv = document.querySelector('.background-effect');
@@ -41,6 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
   setContentHeight();
   $(window).on("resize", setContentHeight);
   requestAnimationFrame(updateScrollYInterval);
+
+
 
   // const controller = new ScrollMagic.Controller();
   // let timeline= new TimelineMax();

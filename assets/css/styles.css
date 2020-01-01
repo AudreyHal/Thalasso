@@ -1,9 +1,11 @@
 
 body, html {
   margin: 0px;
-  overflow:  auto;
-  height: 200vh;
+  width: 100vw; 
+  overflow-x: hidden;
+  /* height: 200vh; */
 }
+
 
 .centered-background-image {
   background-size: cover;
@@ -14,17 +16,33 @@ body, html {
 .intro {
   background-image: url("../images/firstview_picture.sp.jpg");
   position: absolute;
-  top: 120px;
+  top: 64px;
   right: 0;
   bottom: 0;
   left: 0;
+  opacity:0; 
+  transform: translateY(0);
+  transition: transform 2s, opacity 2s;
+  z-index:0
 }
 
 .section_one {
   height: 100vh;
   position: relative;
 }
-
+.section_one-title-container{
+  width: 100%;
+  display: flex;
+  justify-content:center;
+  align-content: center;
+  padding-top: 40px;
+  
+}
+.section_one-title-image{
+  width: 270px;
+  height: 43px;
+  z-index:7  
+}
 .about-text,
 .concept-text {
   transform: none;
@@ -181,7 +199,13 @@ figure {
   background-color: #fff;
   pointer-events: none;
   z-index: 1;
+  opacity: 1;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  transition: opacity 1s;
+ 
 }
+
 .loading-image{
   width: 80%;
   position: absolute;
@@ -199,7 +223,7 @@ figure {
   pointer-events: none;
   width: 100vw;
   height: 100% ;
-  /* overflow-x: hidden; */
+  overflow: hidden;
 }
 
 .background-effect-box{
@@ -211,7 +235,7 @@ figure {
 .background-effect-content{
   width: 100%;
   margin-left: 50%;
-  margin-top: 39%;
+  margin-top: 30%;
   transform:translateX(-50%); 
 }
 
@@ -219,11 +243,29 @@ figure {
   top: 13%
 }
 
+.fade-loader{
+  opacity: 0 
+}
+
+.layout-container{
+  position: relative; 
+}
+
+.main-content{
+  position: relative;
+}
+
 /* Laptops */
 
 @media (min-width:1024px) {
   .intro {
     background-image: url("../images/firstview_picture.jpg");
+    top: 120px;   
+  }
+
+  .section_one-title-image{
+    width: 932px;
+    height: 160px;
   }
   .about-text {
     transform: rotate(90deg) translateY(-100%);
