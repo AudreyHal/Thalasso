@@ -33,6 +33,7 @@ window.addEventListener('scroll', updateScrollY)
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(()=>{
     $('.loading').addClass("fade-loader");
+    $('body').removeClass("hide-overflow");
   }, 800);
   
   setTimeout(()=>{    
@@ -56,8 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		$el.ripples('drop', x, y, dropRadius, strength);
     setTimeout(()=>{ $el.ripples('destroy')  },5000)
-
-    gsap.to("h2.title", {duration: 1, opacity: 0.3});
+    gsap.to(".section_one-title-image", 1, {opacity:1});
+    gsap.to(".section_one-title-box", 1.5, {x: 0});
+    gsap.fromTo(".section_one-title-box", {width: "0%"}, {duration:1, width:"100%"});
   }, 1200);
   
 

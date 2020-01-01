@@ -3,9 +3,14 @@ body, html {
   margin: 0px;
   width: 100vw; 
   overflow-x: hidden;
-  /* height: 200vh; */
+
+ 
 }
 
+.hide-overflow{
+  height: 100vh;
+  overflow-y: hidden
+}
 
 .centered-background-image {
   background-size: cover;
@@ -29,20 +34,35 @@ body, html {
 .section_one {
   height: 100vh;
   position: relative;
+  overflow: auto
+}
+.section_one-title-box{
+  /* width: 100%;
+  height: 100%; */
+  /* transform: matrix(1, 0, 0, 1, 0, 0); */
+  transform: translateX(20px);
+  overflow: hidden;
+  
 }
 .section_one-title-container{
-  width: 100%;
-  display: flex;
-  justify-content:center;
-  align-content: center;
-  padding-top: 40px;
-  
+  display: block;
+  position: relative;
+  width: 270px;
+  height: 43px;
+  margin: 40px auto 0
+}
+.section_one-title-box{
+  width: 0px;
+  height: 43px;
+  z-index:7  
 }
 .section_one-title-image{
   width: 270px;
   height: 43px;
-  z-index:7  
+  z-index:7;
+  opacity: 0
 }
+
 .about-text,
 .concept-text {
   transform: none;
@@ -53,12 +73,15 @@ body, html {
 
 .introduction {
   padding-top: 30px;
+  font-family: 游ゴシック体,YuGothic,游ゴシック,Yu Gothic,sans-serif;
+  padding:40.5px 0px 0px 
 }
 
 .introduction-title {
   font-weight: 400;
   font-size: 19.8px;
   -webkit-text-stroke: .02em #333537;
+  font-family: A1明朝
 }
 
 .introduction-description {
@@ -94,6 +117,7 @@ body, html {
 
 .concept-introduction {
   padding: 35.2px 0px;
+  font-family: 游ゴシック体,YuGothic,游ゴシック,Yu Gothic,sans-serif;
 }
 
 .about-section-grid-container,
@@ -263,10 +287,21 @@ figure {
     top: 120px;   
   }
 
+  .section_one-title-container{
+    width: 932px;
+    height: 160px;
+  }
+  .section_one-title-box{
+    width: 932px;
+    height: 160px;
+    z-index:7  
+  }
   .section_one-title-image{
     width: 932px;
     height: 160px;
   }
+  
+
   .about-text {
     transform: rotate(90deg) translateY(-100%);
     position: absolute;
