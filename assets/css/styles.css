@@ -74,12 +74,13 @@ body, html {
 .introduction {
   padding-top: 30px;
   font-family: 游ゴシック体,YuGothic,游ゴシック,Yu Gothic,sans-serif;
-  padding:40.5px 0px 0px 
+  padding:2% 0px 0px 
+  /* padding:40.5px 0px 0px  */
 }
 
 .introduction-title {
   font-weight: 400;
-  font-size: 19.8px;
+  font-size: 17.8px;
   -webkit-text-stroke: .02em #333537;
   font-family: A1明朝
 }
@@ -97,6 +98,13 @@ body, html {
   margin-top: 32.04px;
 }
 
+.about-text-container{
+  position: absolute
+}
+
+.about-section-row{
+  position: relative
+}
 .concept_picture {
   background-image: url("../images/concept_picture.sp.jpg");
   height: 240px;
@@ -124,6 +132,10 @@ body, html {
 .concept-section-grid-container {
   position: relative;
   padding: 66px 45.33px 0px;
+} 
+
+.about-text-container{
+  position: relative;
 }
 
 .link-style {
@@ -278,7 +290,20 @@ figure {
 .main-content{
   position: relative;
 }
+/* 
+.delayed-show{
+  opacity: 0;
+  -webkit-transform: translateY(30px);
+  transform: translateY(30px);  
+  transition-duration: transform 1.5s;
+}
 
+
+.appear{
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+} */
 /* Laptops */
 
 @media (min-width:1024px) {
@@ -314,6 +339,7 @@ figure {
   }
   .introduction {
     padding-top: 0px;
+    padding-left: 45%
   }
   .about_picture {
     background-image: url("../images/about_picture.jpg");

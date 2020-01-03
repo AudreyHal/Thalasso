@@ -1,11 +1,3 @@
-// $(document).ready(()=>{
-// $('.first-load-container').ripples({
-//   resolution: 512,
-//   dropRadius: 20,
-//   perturbance: 0.04,
-
-// });
-
 let currentScrollY = 0;
 let targetScrollY = 0;
 let updateScrollFrame = null;
@@ -76,27 +68,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  // const controller = new ScrollMagic.Controller();
-  // let timeline= new TimelineMax();
-  // timeline
-  // .from('.background-effect-content', 1,{
-  //   y:-1,
-  //   x:0,
-  //   ease: Power3.easeInOut
-  // })
+  const controller = new ScrollMagic.Controller();
+  let timeline= new TimelineMax();
+  timeline
+  .from('.background-effect-content', 1,{
+    y:-1,
+    x:0,
+    ease: Power3.easeInOut
+  })
 
+  let t1=gsap.timeline();
+  t1.fromTo(".about-text-container",{opacity:0},{duration: 1.5, opacity:1});
+  t1.fromTo(".introduction",{opacity:0},{duration: 1.5, opacity:1},"-=1.5");
 
-  // let tween=  gsap.to(".clear-droplets-box",  {duration: 1, y:-382, ease: "slow(0.1, 0.1, false)"});  gsap.to(".blurred-droplets-box",  {duration: 1, y:-782, ease: "slow(0.1, 0.1, false)"});
+  let tween=  gsap.fromTo(".section_two",{opacity:0},{duration: 1, opacity:1});  
 
-  // let scene=new ScrollMagic.Scene({
-  //   triggerElement:'.background-effect',
-  //   duration:heightValue,
-  //   triggerHook:0,
-  //   offset:'20'
-  // })
+  let scene=new ScrollMagic.Scene({
+    triggerElement:'.section_one',
+    // duration:$('.section_one').height()-$('.section_one').height()/2,  
+    triggerHook: 0,  
+    offset:$('.section_one').height()/2
+  })
 
-  // .setTween(tween)
-  // .setPin('.background-effect')
-  // .addIndicators()
-  // .addTo(controller)
+  .setTween(tween) 
+  .addIndicators()
+  .addTo(controller)
 })
