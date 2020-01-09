@@ -2,7 +2,7 @@ let currentScrollY = 0;
 let targetScrollY = 0;
 let updateScrollFrame = null;
 
-
+// Background Bubble Motion 
 const updateScrollYInterval = () => {
   currentScrollY += .05 * (targetScrollY - currentScrollY);
   $('.clear-droplets-box').css({
@@ -19,41 +19,59 @@ const updateScrollY = () => {
   targetScrollY = window.pageYOffset
 }
 
-window.addEventListener('scroll', updateScrollY)
+// Ripple Effect
+const animateRippleEffect = ($el) => {
+  $el.ripples({
+    resolution: 96,
+    dropRadius: 80,
+    perturbance: 0.06,
+  });
+
+  // Automate random drops
+  let x = Math.random() * $el.innerWidth();
+  let y = Math.random() * $el.innerHeight();
+  let dropRadius = 80;
+  let strength = .02 + .1 * Math.random();
+
+  $el.ripples('drop', x, y, dropRadius, strength);
+  setTimeout(() => {
+    $el.ripples('destroy')
+  }, 5000)
+}
+
+
+window.addEventListener('scroll', updateScrollY);
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(()=>{
+  setTimeout(() => {
     $('.loading').addClass("fade-loader");
     $('body').removeClass("hide-overflow");
   }, 800);
-  
-  setTimeout(()=>{    
-    $('.intro').css({
-      "opacity":"1",
-      // "transform": "translateY(-15px)"
-    })
-          
-      $('.intro').ripples({
-        resolution: 96,
-        dropRadius: 80, 
-        perturbance: 0.06,
-      });
-     
-    // Automatic drops
-		var $el = $('.intro');
-		var x = Math.random() * $el.innerWidth();
-		var y = Math.random() * $el.innerHeight();
-		var dropRadius = 80;
-		var strength =  .02 + .1 * Math.random()  ;
 
-		$el.ripples('drop', x, y, dropRadius, strength);
-    setTimeout(()=>{ $el.ripples('destroy')  },5000)
-    gsap.to(".section_one-title-image", 1, {opacity:1});
-    gsap.to(".section_one-title-box", 1.5, {x: 0});
-    gsap.fromTo(".section_one-title-box", {width: "0%"}, {duration:1, width:"100%"});
+  setTimeout(() => {
+    $('.intro').css({
+      "opacity": "1",
+      "transform": "translateY(-15px)"
+    })
+
+    let $el = $('.intro');
+    animateRippleEffect($el)
+
+    gsap.to(".section_one-title-image", 1, {
+      opacity: 1
+    });
+    gsap.to(".section_one-title-box", 1.5, {
+      x: 0
+    });
+    gsap.fromTo(".section_one-title-box", {
+      width: "0%"
+    }, {
+      duration: 1,
+      width: "100%"
+    });
   }, 1200);
-  
+
 
   // Set the height of parent as absolutely positioned child
   setContentHeight = () => {
@@ -67,30 +85,90 @@ document.addEventListener('DOMContentLoaded', () => {
   requestAnimationFrame(updateScrollYInterval);
 
 
-
   const controller = new ScrollMagic.Controller();
-  let timeline= new TimelineMax();
-  timeline
-  .from('.background-effect-content', 1,{
-    y:-1,
-    x:0,
-    ease: Power3.easeInOut
-  })
 
-  let t1=gsap.timeline();
-  t1.fromTo(".about-text-container",{opacity:0},{duration: 1.5, opacity:1});
-  t1.fromTo(".introduction",{opacity:0},{duration: 1.5, opacity:1},"-=1.5");
+  let scene1 = new ScrollMagic.Scene({
+      triggerElement: '.section_one',
+      triggerHook: 0,
+      offset: $('.section_one').height() / 2
+    })
+    .setClassToggle(".about-section-grid-container .delayed-show", "appear")
+    .addIndicators()
+    .addTo(controller)
 
-  let tween=  gsap.fromTo(".section_two",{opacity:0},{duration: 1, opacity:1});  
 
-  let scene=new ScrollMagic.Scene({
-    triggerElement:'.section_one',
-    // duration:$('.section_one').height()-$('.section_one').height()/2,  
-    triggerHook: 0,  
-    offset:$('.section_one').height()/2
-  })
+  let scene2 = new ScrollMagic.Scene({
+      triggerElement: '.about-section-grid-container',
+      triggerHook: 0,
+      offset: 100
+    })
+    .on('start', () => {
+      let $el = $('.about_picture');
+      $el.addClass("appear");
+      animateRippleEffect($el)
+    })
+    .addIndicators()
+    .addTo(controller)
 
-  .setTween(tween) 
-  .addIndicators()
-  .addTo(controller)
+
+  let scene3 = new ScrollMagic.Scene({
+      triggerElement: '.about_picture_container',
+      triggerHook: 0,
+      offset: $('.about_picture_container').height() / 2
+    })
+    .setClassToggle(".concept-section-grid-container .delayed-show", "appear")
+    .addIndicators()
+    .addTo(controller)
+
+
+  let scene4 = new ScrollMagic.Scene({
+      triggerElement: '.about_picture_container',
+      triggerHook: 0,
+      offset: $('.about_picture_container').height() + 20
+    })
+    .on('start', () => {
+      let $el = $('.concept_picture');
+      $el.addClass("appear");
+      animateRippleEffect($el)
+    })
+    .addIndicators()
+    .addTo(controller)
+
+
+  let scene5 = new ScrollMagic.Scene({
+      triggerElement: '.concept_picture_container',
+      triggerHook: 0,
+      offset: $('.concept_picture_container').height() / 1.5,
+    })
+    .on('start', () => {
+      let delay = 200;
+      for (i = 0; i < 4; i++) {
+        let $el = $('.column').eq(i);
+        console.log(delay);
+        setTimeout(() => {
+          $el.addClass("appear")
+        }, delay * i)
+      }
+    })
+    .addIndicators()
+    .addTo(controller)
+
+  let scene6 = new ScrollMagic.Scene({
+      triggerElement: '.concept_picture_container',
+      triggerHook: 0,
+      offset: $('.concept_picture_container').height(),
+    })
+    .on('start', () => {
+      let delay = 200;
+      for (i = 4; i < 7; i++) {
+        let $el = $('.column').eq(i);
+        console.log(delay);
+        setTimeout(() => {
+          $el.addClass("appear")
+        }, delay * i)
+      }
+    })
+    .addIndicators()
+    .addTo(controller)
+
 })

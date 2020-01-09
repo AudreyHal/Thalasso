@@ -1,13 +1,23 @@
-
-body, html {
-  margin: 0px;
-  width: 100vw; 
-  overflow-x: hidden;
-
- 
+@font-face {
+  font-family: 'TTNormsPro-Bold';
+  src: url('../fonts/39992D_0_0.eot');
+  src: url('../fonts/39992D_0_0.eot?#iefix') format('embedded-opentype'), url('../fonts/39992D_0_0.woff') format('woff2'), url('../fonts/39992D_0_0.woff') format('woff'), url('../fonts/39992D_0_0.ttf') format('truetype');
 }
 
-.hide-overflow{
+@font-face {
+  font-family: 'TTNormsPro-Regular';
+  src: url('../fonts/39992D_1_0.eot');
+  src: url('../fonts/39992D_1_0.eot?#iefix') format('embedded-opentype'), url('../fonts/39992D_1_0.woff') format('woff2'), url('../fonts/39992D_1_0.woff') format('woff'), url('../fonts/39992D_1_0.ttf') format('truetype');
+}
+
+body,
+html {
+  margin: 0px;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.hide-overflow {
   height: 100vh;
   overflow-y: hidden
 }
@@ -21,14 +31,15 @@ body, html {
 .intro {
   background-image: url("../images/firstview_picture.sp.jpg");
   position: absolute;
-  top: 64px;
+  /* top: 64px; */
+  top: 79px;
   right: 0;
   bottom: 0;
   left: 0;
-  opacity:0; 
+  opacity: 0;
   transform: translateY(0);
   transition: transform 2s, opacity 2s;
-  z-index:0
+  z-index: 0
 }
 
 .section_one {
@@ -36,30 +47,33 @@ body, html {
   position: relative;
   overflow: auto
 }
-.section_one-title-box{
+
+.section_one-title-box {
   /* width: 100%;
   height: 100%; */
   /* transform: matrix(1, 0, 0, 1, 0, 0); */
   transform: translateX(20px);
   overflow: hidden;
-  
 }
-.section_one-title-container{
+
+.section_one-title-container {
   display: block;
   position: relative;
   width: 270px;
   height: 43px;
   margin: 40px auto 0
 }
-.section_one-title-box{
+
+.section_one-title-box {
   width: 0px;
   height: 43px;
-  z-index:7  
+  z-index: 7
 }
-.section_one-title-image{
+
+.section_one-title-image {
   width: 270px;
   height: 43px;
-  z-index:7;
+  z-index: 7;
   opacity: 0
 }
 
@@ -73,9 +87,8 @@ body, html {
 
 .introduction {
   padding-top: 30px;
-  font-family: 游ゴシック体,YuGothic,游ゴシック,Yu Gothic,sans-serif;
-  padding:2% 0px 0px 
-  /* padding:40.5px 0px 0px  */
+  font-family: 游ゴシック体, YuGothic, 游ゴシック, Yu Gothic, sans-serif;
+  padding: 2% 0px 0px
 }
 
 .introduction-title {
@@ -98,13 +111,14 @@ body, html {
   margin-top: 32.04px;
 }
 
-.about-text-container{
+.about-text-container {
   position: absolute
 }
 
-.about-section-row{
+.about-section-row {
   position: relative
 }
+
 .concept_picture {
   background-image: url("../images/concept_picture.sp.jpg");
   height: 240px;
@@ -125,16 +139,16 @@ body, html {
 
 .concept-introduction {
   padding: 35.2px 0px;
-  font-family: 游ゴシック体,YuGothic,游ゴシック,Yu Gothic,sans-serif;
+  font-family: 游ゴシック体, YuGothic, 游ゴシック, Yu Gothic, sans-serif;
 }
 
 .about-section-grid-container,
 .concept-section-grid-container {
   position: relative;
   padding: 66px 45.33px 0px;
-} 
+}
 
-.about-text-container{
+.about-text-container {
   position: relative;
 }
 
@@ -171,7 +185,7 @@ body, html {
   margin: 61px 27.5px 0px;
 }
 
-.lineup-title { 
+.lineup-title {
   font-size: 4.8vw;
   margin-top: 15.4px;
   font-weight: 400;
@@ -179,7 +193,7 @@ body, html {
 }
 
 .lineup-subtitle {
-  font-family: TTNormsPro-Regular;  
+  font-family: TTNormsPro-Regular;
   font-size: 3.1vw;
   margin-top: 4.4px;
 }
@@ -212,20 +226,20 @@ figure {
   margin-bottom: 30px
 }
 
-.hidden{
+.hidden {
   opacity: 0;
   overflow: hidden;
   max-height: 0
 }
 
-.cover{
+.cover {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center
 }
 
-.loading{
+.loading {
   width: 100%;
   position: fixed;
   top: 0;
@@ -239,94 +253,90 @@ figure {
   -webkit-transition: opacity 1s;
   -moz-transition: opacity 1s;
   transition: opacity 1s;
- 
 }
 
-.loading-image{
+.loading-image {
   width: 80%;
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
-.background-effect{
+.background-effect {
   position: absolute;
   top: 0 !important;
   right: 0;
   left: 0;
   pointer-events: none;
   width: 100vw;
-  height: 100% ;
+  height: 100%;
   overflow: hidden;
 }
 
-.background-effect-box{
+.background-effect-box {
   position: absolute;
   width: 213%;
-  
 }
 
-.background-effect-content{
+.background-effect-content {
   width: 100%;
   margin-left: 50%;
   margin-top: 30%;
-  transform:translateX(-50%); 
+  transform: translateX(-50%);
 }
 
-.blurred-droplets-box{
+.blurred-droplets-box {
   top: 13%
 }
 
-.fade-loader{
-  opacity: 0 
+.fade-loader {
+  opacity: 0
 }
 
-.layout-container{
-  position: relative; 
-}
-
-.main-content{
+.layout-container {
   position: relative;
 }
-/* 
-.delayed-show{
-  opacity: 0;
-  -webkit-transform: translateY(30px);
-  transform: translateY(30px);  
-  transition-duration: transform 1.5s;
+
+.main-content {
+  position: relative;
 }
 
+.delayed-show {
+  opacity: 0;
+  -webkit-transform: translateY(30px);
+  transform: translateY(30px);
+  transition: transform 1s, opacity 1s;
+}
 
-.appear{
+.appear {
   opacity: 1;
   -webkit-transform: translateY(0);
   transform: translateY(0);
-} */
-/* Laptops */
+}
+
+/* Laptop Media Queries */
 
 @media (min-width:1024px) {
   .intro {
     background-image: url("../images/firstview_picture.jpg");
-    top: 120px;   
+    /* top: 120px; */
+    top: 135px;
   }
-
-  .section_one-title-container{
+  .section_one-title-container {
     width: 932px;
     height: 160px;
   }
-  .section_one-title-box{
+  .section_one-title-box {
     width: 932px;
     height: 160px;
-    z-index:7  
+    z-index: 7
   }
-  .section_one-title-image{
+  .section_one-title-image {
     width: 932px;
     height: 160px;
   }
-  
-
   .about-text {
     transform: rotate(90deg) translateY(-100%);
     position: absolute;
@@ -395,11 +405,11 @@ figure {
   .column {
     width: 25%;
   }
-  .lineup-title {   
-    font-size: 1.7vw;    
+  .lineup-title {
+    font-size: 1.7vw;
   }
   .lineup-subtitle {
-    font-size: 0.9vw;   
+    font-size: 0.9vw;
   }
   .lineup-description,
   .lineup-meta {
@@ -411,21 +421,16 @@ figure {
   .flex-container {
     padding: 0px 15%;
   }
-  .loading-image{
+  .loading-image {
     width: 33%;
   }
-  
-  .background-effect-box{
- 
+  .background-effect-box {
     width: 120%;
-    
   }
-
-.background-effect-content{
-  margin-top: 17%;
-}  
-
-.blurred-droplets-box{
-  top: 9%
-}
+  .background-effect-content {
+    margin-top: 17%;
+  }
+  .blurred-droplets-box {
+    top: 9%
+  }
 }
