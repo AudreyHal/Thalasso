@@ -67,13 +67,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let bannerImage = $('.intro');
     animateRippleEffect(bannerImage)
 
-    gsap.to(".section_one-title-image", 1, {
+    gsap.to(".section-one-title-image", 1, {
       opacity: 1
     });
-    gsap.to(".section_one-title-box", 1.5, {
+    gsap.to(".section-one-title-box", 1.5, {
       x: 0
     });
-    gsap.fromTo(".section_one-title-box", {
+    gsap.fromTo(".section-one-title-box", {
       width: "0%"
     }, {
       duration: 1,
@@ -93,9 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Scene 1
   new ScrollMagic.Scene({
-      triggerElement: '.section_one',
+      triggerElement: '.section-one',
       triggerHook: 0,
-      offset: $('.section_one').height() / 2
+      offset: $('.section-one').height() / 2
     })
     .setClassToggle(".about-section-grid-container .delayed-show", "appear")
     .addIndicators()
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
       offset: 100
     })
     .on('start', () => {
-      let bannerImage = $('.about_picture');
+      let bannerImage = $('.about-picture');
       bannerImage.addClass("appear");
       animateRippleEffect(bannerImage)
     })
@@ -119,9 +119,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Scene 3
   new ScrollMagic.Scene({
-      triggerElement: '.about_picture_container',
+      triggerElement: '.about-picture-container',
       triggerHook: 0,
-      offset: $('.about_picture_container').height() / 2
+      offset: $('.about-picture-container').height() / 2
     })
     .setClassToggle(".concept-section-grid-container .delayed-show", "appear")
     .addIndicators()
@@ -130,12 +130,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Scene 4
   new ScrollMagic.Scene({
-      triggerElement: '.about_picture_container',
+      triggerElement: '.about-picture-container',
       triggerHook: 0,
-      offset: $('.about_picture_container').height() + 20
+      offset: $('.about-picture-container').height() + 20
     })
     .on('start', () => {
-      let bannerImage = $('.concept_picture');
+      let bannerImage = $('.concept-picture');
       bannerImage.addClass("appear");
       animateRippleEffect(bannerImage)
     })
@@ -145,9 +145,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Scene 5 
   new ScrollMagic.Scene({
-      triggerElement: '.concept_picture_container',
+      triggerElement: '.concept-picture-container',
       triggerHook: 0,
-      offset: $('.concept_picture_container').height() / 1.5,
+      offset: $('.concept-picture-container').height() / 1.5,
     })
     .on('start', () => {
       let delay = 200;
@@ -163,9 +163,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Scene 6 
   new ScrollMagic.Scene({
-      triggerElement: '.concept_picture_container',
+      triggerElement: '.concept-picture-container',
       triggerHook: 0,
-      offset: $('.concept_picture_container').height(),
+      offset: $('.concept-picture-container').height(),
     })
     .on('start', () => {
       let delay = 200;

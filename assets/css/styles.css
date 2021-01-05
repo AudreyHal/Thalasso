@@ -31,7 +31,6 @@ html {
 .intro {
   background-image: url("../images/firstview_picture.sp.jpg");
   position: absolute;
-  /* top: 64px; */
   top: 79px;
   right: 0;
   bottom: 0;
@@ -42,21 +41,18 @@ html {
   z-index: 0
 }
 
-.section_one {
+.section-one {
   height: 100vh;
   position: relative;
   overflow: auto
 }
 
-.section_one-title-box {
-  /* width: 100%;
-  height: 100%; */
-  /* transform: matrix(1, 0, 0, 1, 0, 0); */
+.section-one-title-box {
   transform: translateX(20px);
   overflow: hidden;
 }
 
-.section_one-title-container {
+.section-one-title-container {
   display: block;
   position: relative;
   width: 270px;
@@ -64,13 +60,13 @@ html {
   margin: 40px auto 0
 }
 
-.section_one-title-box {
+.section-one-title-box {
   width: 0px;
   height: 43px;
   z-index: 7
 }
 
-.section_one-title-image {
+.section-one-title-image {
   width: 270px;
   height: 43px;
   z-index: 7;
@@ -105,7 +101,7 @@ html {
   letter-spacing: .15em;
 }
 
-.about_picture {
+.about-picture {
   background-image: url("../images/about_picture.sp.jpg");
   height: 240px;
   margin-top: 32.04px;
@@ -119,14 +115,14 @@ html {
   position: relative
 }
 
-.concept_picture {
+.concept-picture {
   background-image: url("../images/concept_picture.sp.jpg");
   height: 240px;
   margin-top: 32.04px;
   width: 100%
 }
 
-.section_three {
+.section-three {
   position: relative;
 }
 
@@ -181,7 +177,7 @@ html {
   width: 70%;
 }
 
-.section_four {
+.section-four {
   margin: 61px 27.5px 0px;
 }
 
@@ -321,19 +317,18 @@ figure {
 @media (min-width:1024px) {
   .intro {
     background-image: url("../images/firstview_picture.jpg");
-    /* top: 120px; */
     top: 135px;
   }
-  .section_one-title-container {
+  .section-one-title-container {
     width: 932px;
     height: 160px;
   }
-  .section_one-title-box {
+  .section-one-title-box {
     width: 932px;
     height: 160px;
     z-index: 7
   }
-  .section_one-title-image {
+  .section-one-title-image {
     width: 932px;
     height: 160px;
   }
@@ -351,12 +346,12 @@ figure {
     padding-top: 0px;
     padding-left: 45%
   }
-  .about_picture {
+  .about-picture {
     background-image: url("../images/about_picture.jpg");
     height: 800px;
     margin-top: 120px;
   }
-  .about_picture_container {
+  .about-picture-container {
     padding: 0px 120px;
   }
   .concept-text {
@@ -374,21 +369,18 @@ figure {
   .concept-introduction {
     padding: 0px 198px;
   }
-  .concept_picture {
+  .concept-picture {
     background-image: url("../images/concept_picture.jpg");
     height: 864px;
     position: relative;
     margin-top: -101px;
-    /* position: absolute;
-    top:233px;
-    left:0; */
     z-index: 1;
   }
   .introduction-title {
     font-size: 29.8px;
     letter-spacing: .24em;
   }
-  .introduction_description {
+  .introduction-description {
     font-size: 12.95px;
     margin-top: 24.05px;
     line-height: 2.3em;
